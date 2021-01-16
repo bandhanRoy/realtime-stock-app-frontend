@@ -1,0 +1,41 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/stock.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Stock Screening
+    </a>
+    <button type="button" class="btn btn-primary" (click)="logOut()">Sign out</button>
+</nav>
+<div class="container-fluid">
+    <div class="card mt-2">
+        <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Scan Stock</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="formGroupExampleInput"
+                            placeholder="Enter company name Ex. AMZN" [formControl]="companyName">
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" [disabled]="!companyName.value"
+                            class="btn btn-block btn-outline-primary mb-2" (click)="scanCompanyName()">Scan</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 p-3">
+            <app-charts></app-charts>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 p-3">
+            <h3>User history</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 p-3">
+            <app-table></app-table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<form class="form-signin my-5" [formGroup]="userRegistrationForm" (ngSubmit)="onSubmit()">
+    <img class="mb-4" src="./assets/images/stock.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Register to Stock Screening</h1>
+    <div class="alert alert-danger" role="alert"
+        *ngIf="submitted && (f.username.errors || f.password.errors || message || (userRegistrationForm.value.password !== userRegistrationForm.value.confirmPassword))">
+        <p *ngIf="f.username.errors && f.username.errors.required">Username is required</p>
+        <p *ngIf="f.username.errors && f.username.errors.email">Username should be an email</p>
+        <p *ngIf="f.password.errors && f.password.errors.required">Password is required</p>
+        <p *ngIf="f.password.errors && f.password.errors.minlength">Password must be at least 8 characters</p>
+        <p *ngIf="f.password.errors && f.password.errors.pattern">Password must contain Uppercase, lowercase, numbers
+            and alphanumeric digits
+        </p>
+        <p *ngIf="f.confirmPassword.errors && f.confirmPassword.errors.required">Password is required</p>
+        <p *ngIf="userRegistrationForm.value.password !== userRegistrationForm.value.confirmPassword">Password Fields
+            Did Not Match</p>
+        <p *ngIf="message">{{message}}</p>
+    </div>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" formControlName="username"
+        required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control br-0" placeholder="Password"
+        formControlName="password" required>
+    <label for="confirmPassword" class="sr-only">Confirm Password</label>
+    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password"
+        formControlName="confirmPassword" required>
+    <button class="btn btn-lg btn-primary btn-block my-4" type="submit">Register</button>
+    <p class="mt-5 mb-3">Already have an account ? <a class="text-primary cursor-pointer" routerLink="/">Sign in
+            here</a></p>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
+</form>
