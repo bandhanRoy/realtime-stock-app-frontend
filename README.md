@@ -1,12 +1,15 @@
 # RealtimeStockApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25. This a simple real time stock app build on Angular 8.
-For running this project add the backend url in `src/environments/environment.ts` and `src/environments/environment.prod.ts` for connecting to the backend properly.The root is the login page once user logs he can see the dashboard. User can sign out, register. The user can see his history or search when scan button is clicked it will show the user the realtime chart for two minutes.The user can also view any chart from its history
+The root is the login page once user logs he can see the dashboard. User can sign out, register. The user can see his history or search when scan button is clicked it will show the user the realtime chart for two minutes.The user can also view any chart from its history
 
 ## Installation
 
 Please run `npm install -g @angular/cli@8.3.25` if you donot have angular 8 pre-installed.
 Navigate to project folder and run `npm install` inside the project directory.
+
+## Setup Instructions
+For running this project add the backend url in `src/environments/environment.ts` and `src/environments/environment.prod.ts` for connecting to the backend properly and run the below mentioned commands.
 
 ## Development server
 
